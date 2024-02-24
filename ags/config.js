@@ -14,7 +14,7 @@ Gtk.IconTheme.get_default().append_search_path(`${App.configDir}/assets`);
 
 const Workspaces = () => Widget.Box({
 
-    class_name: 'workspace',
+     class_name: 'workspace',
 
     children: Hyprland.bind('workspaces').transform(ws => {
         ws.sort((a, b) => a.id - b.id)
