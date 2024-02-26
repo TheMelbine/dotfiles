@@ -13,22 +13,37 @@ Gtk.IconTheme.get_default().append_search_path(`${App.configDir}/assets`);
 
 
 const Workspaces = () => Widget.Box({
-
-     class_name: 'workspace',
-
-    children: Hyprland.bind('workspaces').transform(ws => {
-        ws.sort((a, b) => a.id - b.id)
-        return ws.map(({ id }) => Widget.Button({
-            on_clicked: () => Hyprland.sendMessage(`dispatch workspace ${id}`),
-            child: Widget.Label(`${id}`),
-            cursor: 'pointer',
-            class_name: Hyprland.active.workspace.bind('id')
-                .transform(i => `${i === id ? 'workspace__item_focused' : ''} workspace__item`),
-
-        }));
-    }),
+    class_name: 'workspace',
+    children: (() => {
+        let defaultName = {
+            1: 'I',
+            2: 'II',
+            3: 'III',
+            4: 'IV',
+            5: 'V',
+            6: 'VI',
+            7: 'VII',
+            8: 'VIII',
+            9: 'IX',
+            10: 'X'
+        };
+        
+        let workspaceButtons = [];
+        for (let id = 1; id <= 10; id++) {
+            let workspaceValue = defaultName[id]; // Получаем значение из объекта defaultName
+            workspaceButtons.push(
+                Widget.Button({
+                    on_clicked: () => Hyprland.message(`dispatch workspace ${id}`),
+                    child: Widget.Label(workspaceValue),
+                    cursor: 'pointer',
+                    class_name: Hyprland.active.workspace.bind('id')
+                        .transform(i => `${i === id ? 'workspace__item_focused' : ''} workspace__item`),
+                })
+            );
+        }
+        return workspaceButtons;
+    })(),
 });
-
 const ClientTitle = () => Widget.Label({
     class_name: 'client-title',
     label: Hyprland.active.client.bind('class'),
@@ -209,12 +224,12 @@ const Right = () => Widget.Box({
 
 const applyCss = () => {
 
-    exec( `sass ${App.configDir}/style/main.scss ${App.configDir}/style.scss`)
+    exec( `sass ${App.configDir}/style/main.scss ${App.configDir}/style.css`)
     console.log("Scss compiled");
 
     App.resetCss();
     App.applyCss(`${App.configDir}/style.css`);
-    console.log("Compiled css applied");
+    console.log(`Compiled css applied into ${App.configDir}/style.css`);
 
 }
 

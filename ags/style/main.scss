@@ -1,6 +1,10 @@
 @use 'variable' as *;
 
 *{
+    min-height: 0px;
+    min-width: 0px;
+    padding: 0px;
+    margin: 0px;
     box-shadow: 0 0;
     border: none;
 }
@@ -15,16 +19,19 @@ label{
     text-shadow: 0px 0px black;
 }
 .workspace {
-    margin: 6px;
-
+    font-size: 16px;
+    font-family: Nimbus Sans;
+    border-radius: 3px;
+    padding: 2px 0px 4px 0px;
+  
     &__item{
+        min-width: 15px;
         font-weight: bold;
-        font-size: 18px;
-        background: $bg_color;
+        background: $selected_bg_color;
         color: $white_text;
         border-radius: 10%;
-        padding: 4px 6px;
-        margin: 0px 2px;
+        padding: 9px 9px 5px 9px;
+        margin: 3px 2px 0px 2px;
 
         &_focused{
             background: $fg_color;
@@ -32,12 +39,12 @@ label{
         }
         &:hover{
             padding-bottom: 0px;
-            border-bottom: 4px solid $fg_color;
+            border-bottom: 5px solid $fg_color;
         }
         
         &:active{
-            padding-bottom: 3px;
-            border-bottom: 1px solid $fg_color;
+            padding-bottom: 5px;
+            border-bottom: 0px solid $fg_color;
         }
         
     }
