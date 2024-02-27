@@ -16,11 +16,11 @@ const Workspaces = () => Widget.Box({
     class_name: 'workspace',
     children: (() => {
         let defaultName = {
-            1: 'I',
-            2: 'II',
-            3: 'III',
-            4: 'IV',
-            5: 'V',
+            1: '1',
+            2: '2',
+            3: '3',
+            4: '4',
+            5: '5',
         };
         
         let workspaceButtons = [];

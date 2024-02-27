@@ -7,44 +7,37 @@
     margin: 0px;
     box-shadow: 0 0;
     border: none;
-}
-button{
-    box-shadow: 0px 0px 0px 0px #151616;
-    background: transparent;
+    text-shadow: 0px 0px black;
     transition: border-bottom 0.15s ease-in-out, padding-bottom 0.15s ease-in-out;
 }
 
-label{
-    box-shadow: 0px 0px;
-    text-shadow: 0px 0px black;
-}
+
 .workspace {
-    font-size: 14px;
-    font-family: Nimbus Sans;
-    border-radius: 3px;
-    padding: 2px 0px 4px 0px;
-  
-    &__item{
-        min-width: 10px;
-        font-weight: bold;
+    background: $bg_color;
+    font-family: JetBrainsMono NFM;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    &__item{ 
+        padding: 0px 5px;
+        margin-right: 5px;
         background: $bg_color;
         color: $white_text;
-        border-radius: 6%;
-        padding: 9px 9px 5px 9px;
-        margin: 3px 2px 0px 2px;
-
+        &:last-child{
+            margin-right: 0px;
+        }
         &_focused{
             background: $fg_color;
             color: $bg_color;
         }
         &:hover{
-            padding-bottom: 0px;
-            border-bottom: 5px solid $fg_color;
+         color: $white_true;
         }
         
         &:active{
-            padding-bottom: 5px;
-            border-bottom: 0px solid $fg_color;
+           
         }
         
     }
@@ -107,7 +100,7 @@ label{
     font-family: JetBrainsMono NFM;
     border-radius: 3px;
     background: $bg_color;
-    margin: 5px 8px 5px 0px;
+    margin: 3px 8px 3px 0px;
     font-weight: bold;
     color: $white_true;
     padding: 0px 10px;
