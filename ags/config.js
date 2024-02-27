@@ -21,15 +21,10 @@ const Workspaces = () => Widget.Box({
             3: 'III',
             4: 'IV',
             5: 'V',
-            6: 'VI',
-            7: 'VII',
-            8: 'VIII',
-            9: 'IX',
-            10: 'X'
         };
         
         let workspaceButtons = [];
-        for (let id = 1; id <= 10; id++) {
+        for (let id = 1; id <= 5; id++) {
             let workspaceValue = defaultName[id]; // Получаем значение из объекта defaultName
             workspaceButtons.push(
                 Widget.Button({
