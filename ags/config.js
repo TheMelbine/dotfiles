@@ -167,13 +167,15 @@ const Weather = () => Widget.Box({
 
                         self.tooltip_text = `${condition}`;
                         self.children = [
-                            Widget.Label({
-                                label: `${temp}°C`
-                            }),
                             Widget.Icon({
                                 icon: iconName,
-                                class_name: 'weather_icon'
+                                class_name: 'weather__icon'
                             }),
+                            Widget.Label({
+                                class_name: 'weather__label',
+                                label: `${temp}°C`
+                            }),
+                            
                         ];
                         
                         prevTemp = temp;

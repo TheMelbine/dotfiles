@@ -10,7 +10,7 @@
 }
 button{
     box-shadow: 0px 0px 0px 0px #151616;
-    background: $bg_color;
+    background: transparent;
     transition: border-bottom 0.15s ease-in-out, padding-bottom 0.15s ease-in-out;
 }
 
@@ -19,17 +19,17 @@ label{
     text-shadow: 0px 0px black;
 }
 .workspace {
-    font-size: 16px;
+    font-size: 14px;
     font-family: Nimbus Sans;
     border-radius: 3px;
     padding: 2px 0px 4px 0px;
   
     &__item{
-        min-width: 15px;
+        min-width: 10px;
         font-weight: bold;
-        background: $selected_bg_color;
+        background: $bg_color;
         color: $white_text;
-        border-radius: 10%;
+        border-radius: 6%;
         padding: 9px 9px 5px 9px;
         margin: 3px 2px 0px 2px;
 
@@ -67,11 +67,32 @@ label{
 
 
 .volume{
-    margin: 0px 10px 0px 0px;
-    
+    border-radius: 8%;
+    padding: 3px 0px;
+    margin: 3px 8px 3px 0px;
+   
     &__slider{
-        padding: 10px;
-        color: rgb(0, 0, 0);
+        border-radius: 0px 4% 4% 0px;
+        background: $bg_color;
+        padding: 0px 15px 0px 10px;
+    }
+    & image{
+        border-radius: 3px 0px 0px 3px;
+        padding: 0px 9px 0px 7px;
+        background: $bg_color;
+        font-size: 15px;
+        margin: 0 2px 0  0;
+    }
+    & highlight{
+        background: $white_text;
+        min-height: 8px;
+    
+    }
+    & slider{
+        
+        background: $fg_color;
+        padding: 8px;
+        margin: -5px;
     }
 }
 
@@ -82,47 +103,53 @@ label{
 
 
 
-.volume image{
-    
-    padding: 5px;
-    margin: 0 5px 0  0;
-}
-.volume highlight{
-    background: $white_text;
-    padding: 5px 0px;
-}
-.volume slider{
-    box-shadow: 0 0;
-    background: $fg_color;
-    padding: 1px;
-}
-
 .clock{
     font-family: JetBrainsMono NFM;
-    border-radius: 5px;
+    border-radius: 3px;
     background: $bg_color;
-    margin: 5px 15px 5px 15px;
+    margin: 5px 8px 5px 0px;
     font-weight: bold;
-    color: rgb(228, 228, 228);
+    color: $white_true;
     padding: 0px 10px;
     font-size: 18px;
 }
 
 .tray{
-    padding: 0px 10px; 
+    padding: 0px 5px; 
+    border-radius: 5px;
+    background: $bg_color;
+    margin: 3px 5px;
 }
 
 .systemTray__item{
+    padding: 3px 5px;
     background: $bg_color; 
     margin: 5px 3px 5px 0px;
 }
 .weather{
-    padding: 0px;
-    margin: 0px 0px;
+    font-family: JetBrainsMono NFM;
+    font-weight: bold;
+    margin: 5px 0px;
+    border-radius: 5px;
+    margin: 5px 8px;
+    &__icon{
+       
+        border-radius: 3px 0px 0px 3px;
+        background: $bg_color;
+        margin: 0px 0px; 
+        padding: 0px;
+        font-size: 30px;  
+    }
+    &__label{
+        margin: 0px 0px 0px 2px;
+        font-size: 15px;
+        border-radius: 0px 3px 3px 0px;
+        padding: 5px;
+        
+        background: $bg_color;
+    }
 }
 .weather_icon{
     
-    margin: 1px 0px; 
-    padding: 0px;
-    font-size: 2rem;  
+
 }
