@@ -15,7 +15,7 @@ Gtk.IconTheme.get_default().append_search_path(`${App.configDir}/assets`);
 const Workspaces = () => Widget.Box({
     class_name: 'workspace',
     children: (() => {
-        let defaultName = {
+        let defaultWorkspaces = {
             1: '1',
             2: '2',
             3: '3',
@@ -25,7 +25,7 @@ const Workspaces = () => Widget.Box({
         
         let workspaceButtons = [];
         for (let id = 1; id <= 5; id++) {
-            let workspaceValue = defaultName[id]; // Получаем значение из объекта defaultName
+            let workspaceValue = defaultWorkspaces[id]; // Получаем значение из объекта defaultName
             workspaceButtons.push(
                 Widget.Button({
                     on_clicked: () => Hyprland.message(`dispatch workspace ${id}`),
@@ -49,10 +49,9 @@ const Clock = () => Widget.Label({
     setup: self => self
         // this is bad practice, since exec() will block the main event loop
         // in the case of a simple date its not really a problem
-        .poll(1000, self => self.label = exec('date "+%H:%M:%S"'))
 
         // this is what you should do
-        .poll(1000, self => execAsync(['date', '+%H:%M:%S'])
+        .poll(1000, self => execAsync(['date', '+%A | %d %B | %H:%M:%S'])
             .then(date => self.label = date)),
 });
 
@@ -188,35 +187,6 @@ const Weather = () => Widget.Box({
     },
 });
 
-const Left = () => Widget.Box({
-
-    spacing: 8,
-    children: [
-        ClientTitle(),
-
-    ],
-});
-
-
-const Center = () => Widget.Box({
-    spacing: 8,
-    children: [
-        
-        Workspaces(),
-    ],
-});
-
-const Right = () => Widget.Box({
-    hpack: 'end',
-    // spacing: 8,
-    children: [
-        Weather(),
-        Volume(),
-        Clock(),
-        SysTray()
-    ],
-});
-
 
 
 const applyCss = () => {
@@ -236,6 +206,34 @@ monitorFile(`${App.configDir}/style`, () => {
 
 
 
+
+  const Left = () => Widget.Box({
+
+    spacing: 8,
+    children: [
+        Workspaces(),
+
+    ],
+});
+
+
+const Center = () => Widget.Box({
+    spacing: 8,
+    children: [
+        
+        Clock(),
+    ],
+});
+
+const Right = () => Widget.Box({
+    hpack: 'end',
+    // spacing: 8,
+    children: [
+        Weather(),
+        Volume(),
+        SysTray()
+    ],
+});
 
 
 
