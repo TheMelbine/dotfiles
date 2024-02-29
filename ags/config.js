@@ -44,6 +44,71 @@ const ClientTitle = () => Widget.Label({
     label: Hyprland.active.client.bind('class'),
 });
 
+
+
+
+const keyboardName = 'gaming-keyboard';
+
+const KeyboardLayoutWidget = () => {
+    const layoutLabel = Widget.Label({
+        class_name: 'keyboard-layout__label',
+        label: '',
+    });
+
+    const layoutIcon = Widget.Icon({
+        class_name: 'keyboard-layout__icon',
+        icon: '',
+    });
+
+    return Widget.Box({
+        class_name: 'keyboard-layout',
+        children: [layoutIcon, layoutLabel],
+        setup: self => {
+            const updateKeyboardLayout = () => {
+                execAsync('hyprctl devices -j')
+                    .then(output => {
+                        const { keyboards } = JSON.parse(output);
+                        const gamingKeyboard = keyboards.find(keyboard => keyboard.name === keyboardName);
+                        if (gamingKeyboard) {
+                            const activeLayout = gamingKeyboard.active_keymap;
+                            switch (activeLayout) {
+                                case 'Russian':
+                                    layoutLabel.label = 'RU';
+                                    layoutIcon.icon = 'RU'; // Иконка с флагом России
+                                    break;
+                                case 'English (US)':
+                                    layoutLabel.label = 'US';
+                                    layoutIcon.icon = 'USA'; // Иконка с флагом США
+                                    break;
+                                default:
+                                    layoutLabel.label = 'Unknown layout';
+                                    layoutIcon.icon = '';
+                            }
+                        } else {
+                            layoutLabel.label = 'Gaming keyboard not found';
+                            layoutIcon.icon = '';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching keyboard layout:', error);
+                        layoutLabel.label = 'Failed to fetch keyboard layout';
+                        layoutIcon.icon = '';
+                    });
+            };
+
+            updateKeyboardLayout();
+
+            const intervalId = setInterval(updateKeyboardLayout, 100);
+
+            self.onDestroy = () => clearInterval(intervalId);
+        },
+    });
+};
+
+
+
+
+
 const Clock = () => Widget.Label({
     class_name: 'clock',
     setup: self => self
@@ -229,6 +294,7 @@ const Right = () => Widget.Box({
     hpack: 'end',
     // spacing: 8,
     children: [
+        KeyboardLayoutWidget(),
         Weather(),
         Volume(),
         SysTray()
