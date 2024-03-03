@@ -1,0 +1,62 @@
+#!/bin/bash
+
+show_help() {
+    echo "Usage: $0 -f <wallpaper_directory> -t <update_time_in_seconds>"
+}
+
+if [[ "$*" == *"--help"* ]] || [[ "$*" == *"-help"* ]]; then
+    show_help
+    exit 0
+fi
+
+while getopts ":f:t:h" opt; do
+  case ${opt} in
+    f)
+      directory=$OPTARG
+      ;;
+    t)
+      update_time=$OPTARG
+      ;;
+    h)
+      show_help
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" 1>&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" 1>&2
+      exit 1
+      ;;
+  esac
+done
+
+if [ -z "$directory" ] || [ -z "$update_time" ]; then
+  show_help
+  exit 1
+fi
+
+while true; do
+    if [ -d "$directory" ]; then
+        monitor=$(hyprctl monitors | grep Monitor | awk '{print $2}')
+        images=$(find "$directory" -type f \( -iname "*.jpg" -o -iname "*.png" \))
+
+        if [ -z "$images" ]; then
+            echo "No images found in directory: $directory"
+            exit 1
+        fi
+
+        random_background=$(shuf -n 1 <<< "$images")
+
+        hyprctl hyprpaper unload all 
+        hyprctl hyprpaper preload "$random_background"
+        hyprctl hyprpaper wallpaper "$monitor, $random_background"
+    else
+        echo "Directory does not exist: $directory"
+        exit 1
+    fi
+
+    sleep "$update_time"
+done
+
