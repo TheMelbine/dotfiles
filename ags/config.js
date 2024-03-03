@@ -6,39 +6,15 @@ import SystemTray from 'resource:///com/github/Aylur/ags/service/systemtray.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import { exec, execAsync, monitorFile } from 'resource:///com/github/Aylur/ags/utils.js';
+// import Workspaces from 'js/bar/Workspaces';
 import Gio from "gi://Gio";
 import Gtk from 'gi://Gtk?version=3.0';
-
+import Workspaces from './js/bar/workspaces/index.js';
 Gtk.IconTheme.get_default().append_search_path(`${App.configDir}/assets`);
 
 
-const Workspaces = () => Widget.Box({
-    class_name: 'workspace',
-    children: (() => {
-        let defaultWorkspaces = {
-            1: '1',
-            2: '2',
-            3: '3',
-            4: '4',
-            5: '5',
-        };
-        
-        let workspaceButtons = [];
-        for (let id = 1; id <= 5; id++) {
-            let workspaceValue = defaultWorkspaces[id]; // Получаем значение из объекта defaultName
-            workspaceButtons.push(
-                Widget.Button({
-                    on_clicked: () => Hyprland.message(`dispatch workspace ${id}`),
-                    child: Widget.Label(workspaceValue),
-                    cursor: 'pointer',
-                    class_name: Hyprland.active.workspace.bind('id')
-                        .transform(i => `${i === id ? 'workspace__item_focused' : ''} workspace__item`),
-                })
-            );
-        }
-        return workspaceButtons;
-    })(),
-});
+
+
 const ClientTitle = () => Widget.Label({
     class_name: 'client-title',
     label: Hyprland.active.client.bind('class'),
@@ -74,11 +50,11 @@ const KeyboardLayoutWidget = () => {
                             switch (activeLayout) {
                                 case 'Russian':
                                     layoutLabel.label = 'RU';
-                                    layoutIcon.icon = 'RU'; // Иконка с флагом России
+                                    layoutIcon.icon = 'RU'; 
                                     break;
                                 case 'English (US)':
                                     layoutLabel.label = 'US';
-                                    layoutIcon.icon = 'USA'; // Иконка с флагом США
+                                    layoutIcon.icon = 'USA'; 
                                     break;
                                 default:
                                     layoutLabel.label = 'Unknown layout';
