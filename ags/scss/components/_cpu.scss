@@ -1,0 +1,22 @@
+.CPUUsageWidget {
+    margin: 5px 8px 5px 0px;
+    font-family: JetBrainsMono NFM;
+    font-weight: bold;
+    min-width: 100px;
+    margin-right: -100px;
+    &__icon{           
+        border-radius: 3px 0px 0px 3px;
+        // background: $colorAccent;
+        padding: 0px 2px 4px  0px;
+        font-size: 23px;   
+    }
+
+    &__label {
+        color: #EBA0AC;
+        margin: 0px 0px 0px 2px;
+        font-size: 15px;
+        border-radius: 0px 3px 3px 0px;
+        padding: 0px 0px 3px 0px;
+        // background: $colorAccent;
+    }
+}

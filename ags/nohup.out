@@ -1,0 +1,31 @@
+
+(com.github.Aylur.ags:12676): Gjs-Console-CRITICAL **: 19:42:41.376: Error: can't assign "113-night" as icon, it is not a file nor a named icon
+set icon@resource:///com/github/Aylur/ags/widgets/icon.js:40:31
+_handleParamProp@resource:///com/github/Aylur/ags/widgets/widget.js:116:13
+Icon@resource:///com/github/Aylur/ags/widgets/icon.js:23:14
+Icon@resource:///com/github/Aylur/ags/widget.js:26:32
+Weather/setup/fetchWeather/<@file:///home/melbine/.config/ags/js/widgets/WeatherWidget.js:29:36
+_init/GLib.MainLoop.prototype.runAsync/</<@resource:///org/gnome/gjs/modules/core/overrides/GLib.js:266:34
+  
+
+(com.github.Aylur.ags:12676): Gvc-WARNING **: 19:42:41.381: Couldn't match the portless stream (with card) - 'Audient iD14 Multichannel' is it an input ? -> 1, streams card id -> 42
+
+(com.github.Aylur.ags:12676): Gvc-CRITICAL **: 19:42:41.381: gvc_mixer_ui_device_get_id: assertion 'GVC_IS_MIXER_UI_DEVICE (device)' failed
+Gjs-Console-Message: 19:42:47.006: Scss compiled
+Gjs-Console-Message: 19:42:47.008: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:47.036: Scss compiled
+Gjs-Console-Message: 19:42:47.040: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:47.072: Scss compiled
+Gjs-Console-Message: 19:42:47.075: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:48.297: Scss compiled
+Gjs-Console-Message: 19:42:48.298: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:48.323: Scss compiled
+Gjs-Console-Message: 19:42:48.326: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:48.361: Scss compiled
+Gjs-Console-Message: 19:42:48.363: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:50.332: Scss compiled
+Gjs-Console-Message: 19:42:50.333: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:50.357: Scss compiled
+Gjs-Console-Message: 19:42:50.360: Compiled css applied into /home/melbine/.config/ags/style.css
+Gjs-Console-Message: 19:42:50.389: Scss compiled
+Gjs-Console-Message: 19:42:50.390: Compiled css applied into /home/melbine/.config/ags/style.css

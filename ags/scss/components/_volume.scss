@@ -1,0 +1,26 @@
+.volume{
+    border-radius: 4px;
+    padding: 3px 0px;
+    margin: 3px 8px 3px 0px;
+    &__slider{
+        border-radius: 0px 4% 4% 0px;
+        background: $colorAccent;
+        padding: 0px 15px 0px 10px;
+    }
+    & image{
+        border-radius: 3px 0px 0px 3px;
+        padding: 0px 9px 0px 7px;
+        background: $colorAccent;
+        font-size: 15px;
+        margin: 0 2px 0  0;
+    }
+    & highlight{
+        background: $colorPrimaryText;
+        min-height: 8px;
+    }
+    & slider{
+        background: $colorInteractive;
+        padding: 0px;
+        margin: -4px;
+    }
+}

@@ -1,0 +1,19 @@
+.keyboardLayout {
+    margin: 5px 8px 5px 0px;
+    font-family: JetBrainsMono NFM;
+    font-weight: bold;
+    &__icon{           
+        border-radius: 3px 0px 0px 3px;
+        background: $colorAccent;
+        padding: 0px 5px;
+        font-size: 25px;   
+    }
+
+    &__label {
+        margin: 0px 0px 0px 2px;
+        font-size: 15px;
+        border-radius: 0px 3px 3px 0px;
+        padding: 5px;
+        background: $colorAccent;
+    }
+}

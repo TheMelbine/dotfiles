@@ -1,4 +1,6 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Убираем приветственное сообщение
+    set fish_greeting ""
+    
 end
-set fish_greeting ""
+

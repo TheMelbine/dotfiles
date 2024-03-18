@@ -1,106 +1,84 @@
 * {
-  min-height: 0px;
-  min-width: 0px;
-  padding: 0px;
-  margin: 0px;
-  box-shadow: 0 0;
+  margin: 0;
+  padding: 0;
   border: none;
-  text-shadow: 0px 0px black;
+  box-shadow: none;
+  text-shadow: 0 0 black;
   transition: border-bottom 0.15s ease-in-out, padding-bottom 0.15s ease-in-out;
 }
 
-.workspace {
-  background: #2a2d34;
-  font-family: JetBrainsMono NFM;
-  font-weight: bold;
-  font-size: 18px;
-  margin: 5px 10px;
-  padding: 3px 10px;
-  border-radius: 4px;
-}
-.workspace__item {
-  border-radius: 3px;
-  padding: 0px 5px;
-  margin-right: 5px;
-  background: #2a2d34;
-  color: #70788b;
-}
-.workspace__item:last-child {
-  margin-right: 0px;
-}
-.workspace__item_focused {
-  background: #FF8294;
-  color: #2a2d34;
-}
-.workspace__item:hover {
-  color: #FFFFFF;
-}
-.client-title {
-  margin: 0px 15px;
-  font-weight: normal;
-  font-size: 18px;
-  color: #70788b;
-}
-
-.media {
-  font-weight: normal;
-  font-size: 18px;
-  color: #70788b;
-}
-
-.volume {
-  border-radius: 8%;
-  padding: 3px 0px;
-  margin: 3px 8px 3px 0px;
-}
-.volume__slider {
-  border-radius: 0px 4% 4% 0px;
-  background: #2a2d34;
-  padding: 0px 15px 0px 10px;
-}
-.volume image {
-  border-radius: 3px 0px 0px 3px;
-  padding: 0px 9px 0px 7px;
-  background: #2a2d34;
-  font-size: 15px;
-  margin: 0 2px 0 0;
-}
-.volume highlight {
-  background: #70788b;
-  min-height: 8px;
-}
-.volume slider {
-  background: #FF8294;
-  padding: 8px;
-  margin: -5px;
-}
-
 .bar {
-  background: #1B1B1B;
+  background: #11111b;
   min-width: 10px;
 }
 
 .clock {
   font-family: JetBrainsMono NFM;
   border-radius: 3px;
-  background: #2a2d34;
+  background: #1e1e2e;
   margin: 3px 8px 3px 0px;
-  color: #FFFFFF;
+  color: #cdd6f4;
   padding: 0px 10px;
   font-size: 18px;
+}
+
+.keyboardLayout {
+  margin: 5px 8px 5px 0px;
+  font-family: JetBrainsMono NFM;
+  font-weight: bold;
+}
+.keyboardLayout__icon {
+  border-radius: 3px 0px 0px 3px;
+  background: #1e1e2e;
+  padding: 0px 5px;
+  font-size: 25px;
+}
+.keyboardLayout__label {
+  margin: 0px 0px 0px 2px;
+  font-size: 15px;
+  border-radius: 0px 3px 3px 0px;
+  padding: 5px;
+  background: #1e1e2e;
 }
 
 .tray {
   padding: 0px 5px;
   border-radius: 5px;
-  background: #2a2d34;
+  background: #1e1e2e;
   margin: 3px 5px;
 }
 
 .systemTray__item {
   padding: 3px 5px;
-  background: #2a2d34;
+  background: #1e1e2e;
   margin: 5px 3px 5px 0px;
+}
+
+.volume {
+  border-radius: 4px;
+  padding: 3px 0px;
+  margin: 3px 8px 3px 0px;
+}
+.volume__slider {
+  border-radius: 0px 4% 4% 0px;
+  background: #1e1e2e;
+  padding: 0px 15px 0px 10px;
+}
+.volume image {
+  border-radius: 3px 0px 0px 3px;
+  padding: 0px 9px 0px 7px;
+  background: #1e1e2e;
+  font-size: 15px;
+  margin: 0 2px 0 0;
+}
+.volume highlight {
+  background: #cdd6f4;
+  min-height: 8px;
+}
+.volume slider {
+  background: #f5c2e7;
+  padding: 0px;
+  margin: -4px;
 }
 
 .weather {
@@ -112,7 +90,7 @@
 }
 .weather__icon {
   border-radius: 3px 0px 0px 3px;
-  background: #2a2d34;
+  background: #1e1e2e;
   margin: 0px 0px;
   padding: 0px;
   font-size: 30px;
@@ -122,26 +100,95 @@
   font-size: 15px;
   border-radius: 0px 3px 3px 0px;
   padding: 5px;
-  background: #2a2d34;
+  background: #1e1e2e;
 }
 
-.keyboard-layout {
+.workspace {
+  background: #1e1e2e;
+  font-family: "JetBrainsMono NFM", monospace;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 10px;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+.workspace__item {
+  border-radius: 3px;
+  padding: 0px 5px;
+  margin-right: 5px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+}
+.workspace__item:last-child {
+  margin-right: 0px;
+}
+.workspace__item_focused {
+  background: #f5c2e7;
+  color: #1e1e2e;
+}
+.workspace__item:hover {
+  color: #f5c2e7;
+}
+
+.CPUUsageWidget {
   margin: 5px 8px 5px 0px;
   font-family: JetBrainsMono NFM;
   font-weight: bold;
+  min-width: 100px;
+  margin-right: -100px;
 }
-.keyboard-layout__icon {
+.CPUUsageWidget__icon {
   border-radius: 3px 0px 0px 3px;
-  background: #2a2d34;
-  padding: 0px 5px;
-  font-size: 25px;
+  padding: 0px 2px 4px 0px;
+  font-size: 23px;
 }
-.keyboard-layout__label {
+.CPUUsageWidget__label {
+  color: #EBA0AC;
   margin: 0px 0px 0px 2px;
   font-size: 15px;
   border-radius: 0px 3px 3px 0px;
-  padding: 5px;
-  background: #2a2d34;
+  padding: 0px 0px 3px 0px;
+}
+
+.RAMUsageWidget {
+  margin: 5px 10px 5px 0px;
+  font-family: JetBrainsMono NFM;
+  font-weight: bold;
+  min-width: 100px;
+  margin-right: -20px;
+}
+.RAMUsageWidget__icon {
+  border-radius: 3px 0px 0px 3px;
+  padding: 5px 5px 0px 5px;
+  font-size: 25px;
+  background-position: center;
+}
+.RAMUsageWidget__label {
+  color: #A6DA95;
+  margin: 0px 0px 0px 2px;
+  font-size: 15px;
+  border-radius: 0px 3px 3px 0px;
+  padding: 0px 0px 4px 0px;
+}
+
+.CPUTempratureWidget {
+  margin: 5px 8px 5px 0px;
+  font-family: JetBrainsMono NFM;
+  font-weight: bold;
+  min-width: 100px;
+  margin-right: -30px;
+}
+.CPUTempratureWidget__icon {
+  border-radius: 3px 0px 0px 3px;
+  padding: 0px 2px 4px 0px;
+  font-size: 25px;
+}
+.CPUTempratureWidget__label {
+  color: #7DC4E4;
+  margin: 0px 0px 0px 2px;
+  font-size: 15px;
+  border-radius: 0px 3px 3px 0px;
+  padding: 0px 0px 3px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */

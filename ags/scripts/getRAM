@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# This script calculates the percentage of used memory and prints it
+
+# Capture the total and used memory from the 'free' command
+totalMem=$(free | grep Mem | awk '{print $2}')
+usedMem=$(free | grep Mem | awk '{print $3}')
+
+# Calculate the percentage of used memory
+percentUsed=$(awk -v total="$totalMem" -v used="$usedMem" 'BEGIN { printf "%.0f\n", (used / total) * 100 }')
+
+# Print the percentage
+echo $percentUsed
+
