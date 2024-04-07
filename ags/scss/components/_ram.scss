@@ -1,22 +1,21 @@
-.RAMUsageWidget {
-    margin: 5px 10px 5px 0px;
+.RAMUsageWidget{
     font-family: JetBrainsMono NFM;
     font-weight: bold;
-    min-width: 100px;
-    margin-right: -20px;
-    &__icon{           
+    margin: 5px 0px;
+    border-radius: 5px;
+    margin: 5px 8px 5px 0px;
+    &__icon{
+        padding: 6px 4px 0px 4px;
         border-radius: 3px 0px 0px 3px;
-        padding: 5px 5px 0px 5px;
-        font-size: 25px;
-        background-position: center;
+        background: $colorAccent;
+        font-size: 25px;  
+        
     }
-
-    &__label {
-        color: #A6DA95;
+    &__label{
         margin: 0px 0px 0px 2px;
         font-size: 15px;
         border-radius: 0px 3px 3px 0px;
-        padding: 0px 0px 4px 0px;
-        
+        padding: 5px;   
+        background: $colorAccent;
     }
 }

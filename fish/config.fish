@@ -4,3 +4,6 @@ if status is-interactive
     
 end
 
+
+# Created by `pipx` on 2024-04-06 07:22:30
+set PATH $PATH /home/melbine/.local/bin
